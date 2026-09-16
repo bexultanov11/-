@@ -1,0 +1,36 @@
+def calculator():
+    print("--- Простой калькулятор на Python ---")
+    print("Доступные операции: +, -, *, /")
+    print("Для выхода введите 'exit'\n")
+
+    while True:
+        num1 = input("Введите первое число (или 'exit' для выхода): ")
+        if num1.lower() == 'exit':
+            break
+            
+        operation = input("Введите операцию (+, -, *, /): ")
+        num2 = input("Введите второе число: ")
+
+        try:
+            n1 = float(num1)
+            n2 = float(num2)
+            
+            if operation == '+':
+                print(f"Результат: {n1} + {n2} = {n1 + n2}\n")
+            elif operation == '-':
+                print(f"Результат: {n1} - {n2} = {n1 - n2}\n")
+            elif operation == '*':
+                print(f"Результат: {n1} * {n2} = {n1 * n2}\n")
+            elif operation == '/':
+                if n2 == 0:
+                    print("Ошибка: Деление на ноль невозможно!\n")
+                else:
+                    print(f"Результат: {n1} / {n2} = {n1 / n2}\n")
+            else:
+                print("Ошибка: Неверная операция!\n")
+                
+        except ValueError:
+            print("Ошибка: Пожалуйста, вводите только числа!\n")
+
+if __name__ == "__main__":
+    calculator()
